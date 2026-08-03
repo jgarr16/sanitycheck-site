@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="250"
+   height="250"
+   fill="none"
+   viewBox="0 0 250 250"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <desc>
+    AUGGIE COLOR THEME
+    To recolor everything: replace the stop-color values in the 7 T- gradients below.
+    Each gradient has a comment showing the matching value for every available theme.
+    Just find your theme column and paste the hex code for each stop — nothing else to touch.
+  </desc>
+
+  <defs>
+
+    <!--
+    =============================================================================
+      THEME COLOR TABLE
+      To switch themes: for each of the 7 gradients below, copy the hex value
+      from your chosen theme column into stop-color="..."
+
+      STOP        RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE
+      ========    =======  =======  =======  =======  =======  =======  =======  =======  =======  =======
+      BRIGHT      #2E7FD0  #F47C20  #F0C010  #3DBA5F  #20B2A8  #2E7FD0  #5B6FD6  #7B3FA0  #E03E7A  #6A8AA8
+      MID         #1560AA  #D95E00  #C89B00  #239444  #0E8F86  #1560AA  #3D4FB8  #5A2880  #C0215D  #4A6A88
+      DEEP        #0C4280  #A84200  #9A7400  #146B2F  #086860  #0C4280  #28368A  #3D1860  #901042  #304E68
+      DARK        #072C57  #752D00  #6B5000  #0A481E  #044640  #072C57  #172260  #2A0D45  #62082C  #1E3448
+      SHADOW      #021428  #401800  #3A2A00  #03220D  #012220  #021428  #090E30  #150525  #320014  #0A1820
+      =============================================================================
+    -->
+
+    <!-- T-VIVID-DEEP : arrow tip highlight → deepest shadow (upper body main fill) -->
+    <linearGradient id="T-VIVID-DEEP">
+      <stop offset="0" stop-color="#2E7FD0"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" BRIGHT:      #2E7FD0  #F47C20  #F0C010  #3DBA5F  #20B2A8  #2E7FD0  #5B6FD6  #7B3FA0  #E03E7A  #6A8AA8 -->
+      <stop offset="1" stop-color="#021428"/>
+      <!--  offset="1" SHADOW:      #021428  #401800  #3A2A00  #03220D  #012220  #021428  #090E30  #150525  #320014  #0A1820 -->
+    </linearGradient>
+
+    <!-- T-VIVID-DARK : bright highlight → dark (main large body panels) -->
+    <linearGradient id="T-VIVID-DARK">
+      <stop offset="0" stop-color="#2E7FD0"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" BRIGHT:      #2E7FD0  #F47C20  #F0C010  #3DBA5F  #20B2A8  #2E7FD0  #5B6FD6  #7B3FA0  #E03E7A  #6A8AA8 -->
+      <stop offset="1" stop-color="#072C57"/>
+      <!--  offset="1" DARK:        #072C57  #752D00  #6B5000  #0A481E  #044640  #072C57  #172260  #2A0D45  #62082C  #1E3448 -->
+    </linearGradient>
+
+    <!-- T-BRIGHT-MID : highlight → mid-tone (arrow tip details, small accents) -->
+    <linearGradient id="T-BRIGHT-MID">
+      <stop offset="0" stop-color="#2E7FD0"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" BRIGHT:      #2E7FD0  #F47C20  #F0C010  #3DBA5F  #20B2A8  #2E7FD0  #5B6FD6  #7B3FA0  #E03E7A  #6A8AA8 -->
+      <stop offset="1" stop-color="#1560AA"/>
+      <!--  offset="1" MID:         #1560AA  #D95E00  #C89B00  #239444  #0E8F86  #1560AA  #3D4FB8  #5A2880  #C0215D  #4A6A88 -->
+    </linearGradient>
+
+    <!-- T-MID-BRIGHT : mid-tone → highlight (reversed accent details) -->
+    <linearGradient id="T-MID-BRIGHT">
+      <stop offset="0" stop-color="#1560AA"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" MID:         #1560AA  #D95E00  #C89B00  #239444  #0E8F86  #1560AA  #3D4FB8  #5A2880  #C0215D  #4A6A88 -->
+      <stop offset="1" stop-color="#2E7FD0"/>
+      <!--  offset="1" BRIGHT:      #2E7FD0  #F47C20  #F0C010  #3DBA5F  #20B2A8  #2E7FD0  #5B6FD6  #7B3FA0  #E03E7A  #6A8AA8 -->
+    </linearGradient>
+
+    <!-- T-MID-DARK : mid-tone → dark (lower mid fills) -->
+    <linearGradient id="T-MID-DARK">
+      <stop offset="0" stop-color="#1560AA"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" MID:         #1560AA  #D95E00  #C89B00  #239444  #0E8F86  #1560AA  #3D4FB8  #5A2880  #C0215D  #4A6A88 -->
+      <stop offset="1" stop-color="#072C57"/>
+      <!--  offset="1" DARK:        #072C57  #752D00  #6B5000  #0A481E  #044640  #072C57  #172260  #2A0D45  #62082C  #1E3448 -->
+    </linearGradient>
+
+    <!-- T-DEEP-DARK : deep mid → dark (transitional fills) -->
+    <linearGradient id="T-DEEP-DARK">
+      <stop offset="0" stop-color="#0C4280"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" DEEP:        #0C4280  #A84200  #9A7400  #146B2F  #086860  #0C4280  #28368A  #3D1860  #901042  #304E68 -->
+      <stop offset="1" stop-color="#072C57"/>
+      <!--  offset="1" DARK:        #072C57  #752D00  #6B5000  #0A481E  #044640  #072C57  #172260  #2A0D45  #62082C  #1E3448 -->
+    </linearGradient>
+
+    <!-- T-DARK-DARK : dark → deepest shadow (darkest fills at bottom) -->
+    <linearGradient id="T-DARK-DARK">
+      <stop offset="0" stop-color="#072C57"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" DARK:        #072C57  #752D00  #6B5000  #0A481E  #044640  #072C57  #172260  #2A0D45  #62082C  #1E3448 -->
+      <stop offset="1" stop-color="#021428"/>
+      <!--  offset="1" SHADOW:      #021428  #401800  #3A2A00  #03220D  #012220  #021428  #090E30  #150525  #320014  #0A1820 -->
+    </linearGradient>
+
+    <!-- T-ARROW-INNER : arrow interior accent — slightly lighter/warmer to stand out -->
+    <linearGradient id="T-ARROW-INNER">
+      <stop offset="0" stop-color="#70B8FF"/>
+      <!--                          RED      ORANGE   YELLOW   GREEN    TEAL     BLUE     INDIGO   VIOLET   PINK     SLATE   -->
+      <!--  offset="0" ACCENT-HI:   #70B8FF  #FFB060  #FFE060  #7DE89A  #5CDED8  #70B8FF  #9AAEFF  #C090E0  #FF90C0  #A0C0D8 -->
+      <stop offset="1" stop-color="#1560AA"/>
+      <!--  offset="1" MID:         #1560AA  #D95E00  #C89B00  #239444  #0E8F86  #1560AA  #3D4FB8  #5A2880  #C0215D  #4A6A88 -->
+    </linearGradient>
+
+    <!--
+    =============================================================================
+      POSITIONED GRADIENTS — DO NOT EDIT BELOW THIS LINE
+      These inherit colors from the T- templates above and only define geometry.
+    =============================================================================
+    -->
+
+    <!-- Large body fills -->
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r0"  x1="207"   x2="207"   y1="134.1" y2="230.6" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r1"  x1="174.5" x2="174.5" y1="56.4"  y2="230.6" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r2"  x1="77.04" x2="77.04" y1="138.3" y2="230.6" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Arrow upper body -->
+    <linearGradient xlink:href="#T-VIVID-DEEP"   id="r3"  x1="186.3" x2="186.3" y1="16.81" y2="154.7" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Arrow tip outer details -->
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r4"  x1="208.7" x2="208.7" y1="56.29" y2="97.09" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r5"  x1="188.1" x2="188.1" y1="87.62" y2="133.6" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r6"  x1="208.1" x2="208.1" y1="96.01" y2="112.7" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Arrow interior accent (differentiated color) -->
+    <linearGradient xlink:href="#T-ARROW-INNER"  id="r3i" x1="186.3" x2="186.3" y1="16.81" y2="154.7" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Mid-body accents -->
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r9"  x1="149.1" x2="149.1" y1="140.8" y2="209.7" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r10" x1="148.1" x2="148.1" y1="123.9" y2="133.8" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r11" x1="138.1" x2="138.1" y1="134.9" y2="139.7" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r12" x1="141.5" x2="141.5" y1="121.9" y2="126.7" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r13" x1="157.3" x2="157.3" y1="111.2" y2="120.5" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-MID-BRIGHT"   id="r14" x1="186.8" x2="186.8" y1="119"   y2="130.7" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Darkest lower fills -->
+    <linearGradient xlink:href="#T-DARK-DARK"    id="r15" x1="214.9" x2="214.9" y1="186.3" y2="230.4" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-DARK-DARK"    id="r17" x1="152.7" x2="152.7" y1="186.1" y2="209.7" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-DARK-DARK"    id="r19" x1="167.9" x2="167.9" y1="133.8" y2="165.1" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-DARK-DARK"    id="r21" x1="43.36" x2="43.36" y1="185.6" y2="230.2" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-DARK-DARK"    id="r25" x1="115.3" x2="115.3" y1="160.7" y2="176.1" gradientUnits="userSpaceOnUse"/>
+
+    <!-- Transitional fills -->
+    <linearGradient xlink:href="#T-DEEP-DARK"    id="r16" x1="158.8" x2="158.8" y1="199.6" y2="230.4" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r18" x1="129.3" x2="129.3" y1="165.5" y2="230.4" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r20" x1="199"   x2="199"   y1="102.5" y2="132.2" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-BRIGHT-MID"   id="r22" x1="85.53" x2="85.53" y1="185.1" y2="201.3" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-MID-DARK"     id="r23" x1="66.87" x2="66.87" y1="201.9" y2="230"   gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-MID-DARK"     id="r24" x1="97.01" x2="97.01" y1="184.6" y2="226.9" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-VIVID-DARK"   id="r26" x1="130.8" x2="130.8" y1="138.7" y2="161.1" gradientUnits="userSpaceOnUse"/>
+    <linearGradient xlink:href="#T-MID-DARK"     id="r27" x1="51.66" x2="51.66" y1="201.2" y2="230"   gradientUnits="userSpaceOnUse"/>
+
+  </defs>
+
+  <!-- Bottom: three distinct blending components -->
+  <path d="m245.4 230.6h-50.96c-17.24-15.91-26.19-32.64-25.84-48.44 0.4-17.25 8.51-29.12 27.91-48.13-10.36 15.14-13.5 23.71-13.04 36.36 1.05 28.96 30.77 48.26 61.93 60.21z" fill="url(#r0)"/>
+  <path d="m 177.6,230.6 h -73.92 l 31.79,-53.55 c 9.4,-14.93 22.42,-32.96 34.73,-42.85 10.62,-8.52 18.96,-16.14 25.77,-34.1 2.39,-6.23 3.85655,-14.106758 5.18655,-18.746758 C 209.07655,73.493242 214.71,62.89 217.79,56.38 l -7.64,31.47 -7.05,11.31 3.74,16.83 c -7.95,11.9 -14.08,19.06 -25.59,28.2 -10.18,8.5 -18.55,20.66 -19.53,38.9 -0.93,17.1 5.35,32 15.88,47.51 z" fill="url(#r1)"/>
+  <path d="m5.37 230.6 143.4-92.31-5.63 16.78-58.4 75.53h-79.32z" fill="url(#r2)"/>
+
+  <!-- Arrow outer body -->
+  <path d="m146.2 154.7c6.7-9.9 14.63-17.81 26.02-26.02 14.72-10.98 20.68-26.79 23.85-40.55 1.23-5.23 3.15-7.93 5.98-10.84 9.87-10.13 16.24-23.2 18.45-37.22l8.13 3.81-8.81-27.09-17.58 21.91 9.62-0.65c-3.06 16.04-10.6 29.16-23.51 32.65-1.58 0.48-0.96-3.44 1.41-4.06 3.17-0.88 1.94-4.28 1.43-5.41-0.42-0.98-0.42-1.64-0.42-2.94 0-1.19-1.48-1.89-2.05-3.3-1.39-3.35-3.65-5.4-7.45-5.4-5.85 0-8.38 5.5-8.38 8.6 0 5.5 5.69 9.02 5.69 11.82 0 2.7-2.36 4.9-6.41 6.31-10.67 3.62-22.54 14.92-28.54 36.06 8.34-11.45 18.31-22.59 25-22.59 4.1 0 3.59 6.36 3.07 9.93-2.58 15.24-14.76 30.17-25.5 54.98z" fill="url(#r3)"/>
+
+  <!-- Arrow interior accent (differentiated color to make the inner shape visible) -->
+  <path d="m199.5 87.62c-3.79 16.67-9.29 30.58-26.84 45.18l-6.13 7.82 24.89-7.4c6.27-6.04 10.69-12.61 14.28-16.74l-6.2-28.86z" fill="url(#r3i)"/>
+
+  <!-- Arrow tip outer details -->
+  <path d="m 199.8,86.05 c 5.49,-5.61 13.08,-14 17.82,-29.76 L 210.87669,88.169659 204.71,97.09 Z" fill="url(#r4)"/>
+  <path d="m 204.4,98.92 6.63007,-6.53628 c -1.68,7.6 -2.07007,14.33628 -3.90007,20.32628 z" fill="url(#r6)"/>
+
+  <!-- Detail accents -->
+  <path d="m142.8 209.7 20.17-9.91c-3.21-9.55-3.18-17.63-2.18-23.72 1.36-8.56 6-17.02 9.41-20.38l-3.11-14.9-31.99 35.51 7.7 33.4z" fill="url(#r9)"/>
+  <path d="m145.8 127.4 5.05-3.49 0.83 0.17-1.23 7.73-6.01 2.01 1.36-6.42z" fill="url(#r10)"/>
+  <path d="m136.8 136.3 4.36-1.35-1.22 4.82-4.77 0.37 1.63-3.84z" fill="url(#r11)"/>
+  <path d="m140.2 122.7 4.09-0.82-1.23 4.82h-4.48l1.62-4z" fill="url(#r12)"/>
+  <path d="m155.8 112.4 6.53-1.22-3.19 8.52-6.8 0.82 3.46-8.12z" fill="url(#r13)"/>
+  <path d="m 204.7,98.913242 6.53007,-9.089249 c 0.79973,4.590273 -2.00345,19.052557 -3.69345,23.872557 z" fill="url(#r6)"/>
+  <path d="m181.3 126.2 10.91-7.19 0.13 11.67-11.04-4.48z" fill="url(#r14)"/>
+  <path d="m194.2 230.4-9.51-44.12c7.79 15.64 16.45 25.59 60.4 44.15l-50.89-0.03z" fill="url(#r15)"/>
+  <path d="m140 230.4 2.32-21.35 20.61-9.46c2.99 9.32 8.57 20.6 14.7 30.78l-37.63 0.03z" fill="url(#r16)"/>
+  <path d="m146.2 186.1 16.51 13.74-20.1 9.91 3.59-23.65z" fill="url(#r17)"/>
+  <path d="m103.7 230.4 42.51-21.26 8.6-43.62-19.69 10.81-31.42 54.07z" fill="url(#r18)"/>
+  <path d="m156 165.1 13.43-9.5-2.39-14.9 12.83-6.89-10.87 1.88-13 29.41z" fill="url(#r19)"/>
+  <path d="m194.2 118.9 7.04-16.45 4.55 13.74c-4.72 6.74-7.84 11.25-13.61 15.96l2.02-13.25z" fill="url(#r20)"/>
+  <path d="m75.43 185.6-66.7 44.28 46.09 0.31 23.89-28.31-3.28-16.28z" fill="url(#r21)"/>
+  <path d="m75.43 185.4 20.2-0.3-16.51 16.25-3.69-15.95z" fill="url(#r22)"/>
+  <path d="m79.12 201.9 5.47 28.1-29.97-0.1 24.5-28z" fill="url(#r23)"/>
+  <path d="m79.12 201.3 20.61-16.76 15.17 1.52-30.18 40.83-5.6-25.59z" fill="url(#r24)"/>
+  <path d="m95.53 176.1 18.9-13.11 20.69-2.32-20.96 0.4-18.63 15.03z" fill="url(#r25)"/>
+  <path d="m114.2 161.1 20.89-0.4 12.23-21.97-33.12 22.37z" fill="url(#r26)"/>
+  <path d="m24.33 219.7 54.65-18.5-24.66 28.8-29.99-10.3z" fill="url(#r27)"/>
+
+</svg>
