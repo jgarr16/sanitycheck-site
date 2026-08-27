@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanity Check — where disagreement is a feature</title>
+  <meta name="description" content="A macOS app that gives AI models independent blind answers, then lets you chair the debate and leave with a documented Decision Brief.">
+  <meta property="og:title" content="Sanity Check — where disagreement is a feature">
+  <meta property="og:description" content="Find where you’re wrong while being wrong is still cheap.">
+  <meta property="og:image" content="https://sanitycheck.garrigai.com/og-image.png">
+  <meta property="og:url" content="https://sanitycheck.garrigai.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sanity Check — where disagreement is a feature">
+  <meta name="twitter:description" content="Find where you’re wrong while being wrong is still cheap.">
+  <meta name="twitter:image" content="https://sanitycheck.garrigai.com/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#14181d;--panel:#1b212a;--raised:#212832;--line:#2a313c;--text:#e8eaed;--dim:#8b93a1;--amber:#e8a33d;--teal:#4fb8a3;--rust:#d1654b;--mono:'IBM Plex Mono',ui-monospace,monospace;--sans:'IBM Plex Sans',-apple-system,sans-serif}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}a{color:inherit}:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.wrap{max-width:1040px;margin:auto;padding:0 24px}
+    header{padding:28px 0;border-bottom:1px solid var(--line)}.header-row{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:10px}.app-icon{display:block}.wordmark,.mono{font-family:var(--mono)}.wordmark{font-weight:700;font-size:15px;letter-spacing:.06em}.dot{color:var(--amber)}.header-tag{font:12px var(--mono);color:var(--dim);letter-spacing:.04em}
+    .hero{padding:72px 0 64px}.eyebrow,.section-head{font:13px var(--mono);color:var(--amber);letter-spacing:.08em;text-transform:uppercase}.eyebrow{margin-bottom:18px}h1{font:600 clamp(31px,5.2vw,52px)/1.12 var(--mono);letter-spacing:-.02em;max-width:20ch;margin-bottom:24px}.hero-sub{font-size:19px;color:var(--dim);max-width:61ch;margin-bottom:32px}.hero-sub strong{color:var(--text);font-weight:500}.cta{display:inline-flex;font:500 14px var(--mono);color:var(--bg);background:var(--amber);padding:13px 22px;border-radius:3px;text-decoration:none;transition:.15s}.cta:hover{background:#f0b458;transform:translateY(-1px)}
+    .demo{margin-top:64px}.demo-prompt{font:13px var(--mono);color:var(--dim);margin-bottom:14px}.demo-prompt span{color:var(--text)}.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.panel,.card{background:var(--panel);border:1px solid var(--line);border-radius:6px}.panel{padding:16px 18px}.panel-label,.card-label{font:11px var(--mono);color:var(--dim);letter-spacing:.05em;margin-bottom:10px}.panel-body{font-size:14.5px}.panel.outlier{border-color:rgba(209,101,75,.45)}.panel.outlier .flag{color:var(--rust);font-weight:600}.panel.agree .flag{color:var(--teal);font-weight:600}.connector{height:42px;display:block;margin:auto}.signal{background:var(--raised);border:1px solid var(--amber);border-radius:6px;padding:18px 20px;display:flex;align-items:flex-start;gap:14px}.signal-icon{flex:0 0 22px;height:22px;border-radius:50%;background:var(--amber);color:var(--bg);display:grid;place-items:center;font:700 13px var(--mono)}.signal-text{font-size:14.5px}.signal-note{font:12.5px var(--mono);color:var(--dim);margin-top:6px}
+    section.block{padding:80px 0;border-top:1px solid var(--line)}.section-head{margin-bottom:12px}.section-title{font:600 clamp(24px,3.5vw,31px)/1.25 var(--mono);margin-bottom:18px;max-width:27ch}.section-intro{color:var(--dim);font-size:17px;max-width:65ch;margin-bottom:42px}.step{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:28px 0;border-top:1px solid var(--line)}.step:last-child{border-bottom:1px solid var(--line)}.step-num{font:13px var(--mono);color:var(--dim);padding-top:3px}.step-title{font:600 17px var(--mono);margin-bottom:8px}.step-body{color:var(--dim);font-size:15.5px;max-width:62ch}
+    .feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.card{padding:24px}.card-label{color:var(--amber);margin-bottom:12px}.card h3{font:600 17px var(--mono);margin-bottom:9px}.card p{font-size:14.5px;color:var(--dim)}.brief{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:start}.brief-list{list-style:none;background:var(--raised);border:1px solid var(--teal);border-radius:6px;padding:8px 22px}.brief-list li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--line);font:13px var(--mono)}.brief-list li:last-child{border:0}.brief-list li::before{content:'✓';color:var(--teal)}
+    .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.choice{padding:24px;border:1px solid var(--line);border-radius:6px}.choice h3{font:600 17px var(--mono);margin-bottom:10px}.choice p{color:var(--dim);font-size:14.5px}.close{text-align:center;padding:80px 24px;border-top:1px solid var(--line)}.close p{font:600 clamp(24px,4vw,36px)/1.25 var(--mono);max-width:28ch;margin:auto}.close span{color:var(--amber)}
+    footer{border-top:1px solid var(--line);padding:28px 0 40px}.footer-text{font:12.5px var(--mono);color:var(--dim)}.footer-brand{display:flex;align-items:center;gap:6px}.garrigai-logo{display:block}
+    @media(max-width:720px){.panels,.feature-grid,.choice-grid,.brief{grid-template-columns:1fr}.step{grid-template-columns:40px 1fr}.hero{padding-top:54px}.brief{gap:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap header-row"><div class="brand"><img src="header-icon.png" alt="" class="app-icon" height="34"><div class="wordmark">SANITY<span class="dot">·</span>CHECK</div></div><div class="header-tag">for macOS</div></div></header>
+  <main>
+    <section class="hero"><div class="wrap">
+      <div class="eyebrow">Multi-model deliberation</div>
+      <h1>Chatbots don’t earn confidence. They’re built with it.</h1>
+      <p class="hero-sub"><strong>Right or wrong, they sound exactly the same.</strong> The goal isn’t a faster answer. It’s finding where you’re wrong while being wrong is still cheap.</p>
+      <a class="cta" href="#how-it-works">See how it works ↓</a>
+      <div class="demo" aria-label="Example of blind model answers revealing a disagreement">
+        <div class="demo-prompt">You ask: <span>“How many r’s are in strawberry?”</span></div>
+        <div class="panels">
+          <div class="panel outlier"><div class="panel-label">MODEL A · BLIND</div><div class="panel-body">There are <span class="flag">2</span> r’s in strawberry.</div></div>
+          <div class="panel agree"><div class="panel-label">MODEL B · BLIND</div><div class="panel-body">There are <span class="flag">3</span> r’s in strawberry.</div></div>
+          <div class="panel agree"><div class="panel-label">MODEL C · BLIND</div><div class="panel-body">There are <span class="flag">3</span> r’s in strawberry.</div></div>
+        </div>
+        <svg class="connector" viewBox="0 0 200 42" preserveAspectRatio="none" aria-hidden="true"><path d="M33 0v20q0 8 8 8h118q8 0 8-8V0M100 0v28M70 28v6" fill="none" stroke="#2A313C" stroke-width="1.5"/></svg>
+        <div class="signal"><div class="signal-icon">!</div><div><div class="signal-text">Two answers match. One doesn’t. That’s a lead, not a verdict.</div><div class="signal-note">Sanity Check surfaces the disagreement. You decide what to challenge and what to verify.</div></div></div>
+      </div>
+    </div></section>
+
+    <section class="block" id="how-it-works"><div class="wrap">
+      <div class="section-head">How it works</div><h2 class="section-title">Put a panel in the room. Keep yourself in the chair.</h2>
+      <p class="section-intro">Sanity Check gives two to eight AI advisors the same question, preserves their independence, and lets you control when the debate begins.</p>
+      <div class="step">
+        <div class="step-num">01</div><div><div class="step-title">Ask once</div><div class="step-body">Every advisor answers cold. Nobody sees anyone else’s response, so the blind round captures genuinely independent takes instead of a chain of peer influence.</div></div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div><div><div class="step-title">Compare, not average</div><div class="step-body">Answers land side by side, raw and inspectable. Agreement is evidence to examine—not truth by vote—and disagreement shows you where to spend your attention.</div></div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div><div><div class="step-title">Decide with the room</div><div class="step-body">You chair the debate: name the disagreement, press the sharp answer, add missing context, or send advisors back for another round. Peer influence begins only when you say so.</div></div>
+      </div>
+    </div></section>
+
+    <section class="block"><div class="wrap">
+      <div class="section-head">Built for productive friction</div><h2 class="section-title">The disagreement is the product.</h2>
+      <div class="feature-grid">
+        <article class="card"><div class="card-label">INDEPENDENCE</div><h3>The blind round is sacred.</h3><p>Pick advisors across vendors. Three models from one lab can still be one opinion in a trench coat. Diverse blind answers give you a better chance of seeing the weak claim.</p></article>
+        <article class="card"><div class="card-label">THE PROVOCATEUR</div><h3>A shit stirrer with a job description.</h3><p>It takes no position. It reads the panel and fires three questions at the premise nobody checked, the constraint nobody named, or the answers that only look like agreement.</p></article>
+        <article class="card"><div class="card-label">NO BLACK BOX</div><h3>Every answer stays a first-class turn.</h3><p>Inspect the raw response and the byte-exact prompt each advisor received. Nothing is quietly merged, smoothed over, or hidden behind an aggregate answer.</p></article>
+        <article class="card"><div class="card-label">HUMAN IN THE LOOP</div><h3>You decide what survives.</h3><p>Sanity Check organizes the evidence and exposes the fault lines. It never promotes the majority to “truth,” and it never makes the final call for you.</p></article>
+      </div>
+    </div></section>
+
+    <section class="block"><div class="wrap brief">
+      <div><div class="section-head">The Decision Brief</div><h2 class="section-title">A clean ending, written by someone who wasn’t in the argument.</h2><p class="section-intro">When the dust settles, an independent moderator—never one of the panelists—turns the documented session into a brief you can act on. The Provocateur’s questions, and what they changed, are preserved verbatim.</p></div>
+      <ul class="brief-list" aria-label="Decision Brief contents"><li>Recommendation</li><li>Consensus</li><li>Disagreements</li><li>1–10 alignment score</li><li>What would change the answer</li><li>Next step</li></ul>
+    </div></section>
+
+    <section class="block"><div class="wrap">
+      <div class="section-head">Private by design</div><h2 class="section-title">Your questions. Your context. Your disk.</h2>
+      <div class="feature-grid">
+        <article class="card"><div class="card-label">PRIVACY PASS</div><h3>Secrets leave as aliases—or not at all.</h3><p>Names, contacts, and sensitive details are swapped for aliases on your Mac before a prompt goes anywhere. You see the exact outgoing payload and approve it first.</p></article>
+        <article class="card"><div class="card-label">LOCAL TRANSCRIPTS</div><h3>Nothing phones home.</h3><p>Sessions stay on your disk. No Sanity Check account, telemetry, or subscription. Export the full reasoning trail as one Markdown file you own.</p></article>
+      </div>
+    </div></section>
+
+    <section class="block"><div class="wrap">
+      <div class="section-head">Use the models you want</div><h2 class="section-title">The check comes from the disagreement, not the horsepower.</h2>
+      <p class="section-intro">Cheap and free models can expose what one frontier model says with a straight face. Mix vendors when you can; independence matters more than stacking brand names.</p>
+      <div class="choice-grid">
+        <article class="choice"><h3>OpenRouter</h3><p>One key reaches hundreds of models at pay-per-token rates. Build a mixed-vendor panel, watch the meter, and run a real session for a few cents.</p></article>
+        <article class="choice"><h3>Ollama</h3><p>Run the whole panel locally for no API cost. Keep model traffic on your Mac and choose the local models that fit the job.</p></article>
+      </div>
+    </div></section>
+
+    <section class="close"><p>Sanity Check. Where disagreement is a <span>feature</span>, not a bug.</p></section>
+  </main>
+  <footer><div class="wrap header-row"><div class="footer-text footer-brand"><span>Sanity Check — built by</span><img src="auggie_blue.svg" alt="GarrigAI" class="garrigai-logo" width="26" height="26"><span>GarrigAI LLC</span></div><div class="footer-text">Coming to macOS</div></div></footer>
+</body>
+</html>
