@@ -102,6 +102,21 @@
 
     <section class="close"><p>Sanity Check. Where disagreement is a <span>feature</span>, not a bug.</p></section>
   </main>
-  <footer><div class="wrap header-row"><div class="footer-text footer-brand"><span>Sanity Check — built by</span><img src="auggie_blue.svg" alt="GarrigAI" class="garrigai-logo" width="26" height="26"><span>GarrigAI LLC</span></div><div class="footer-text">Coming to macOS</div></div></footer>
+  <footer>
+  <div class="wrap header-row">
+    <div class="footer-text footer-brand">
+      <span>Sanity Check — built by</span>
+      <img src="auggie_blue.svg" alt="GarrigAI" class="garrigai-logo" width="26" height="26">
+      <span>GarrigAI LLC</span>
+    </div>
+    <div class="footer-text">Coming to macOS — <a class="notify" href="#">tell me when it ships</a></div>
+  </div>
+  <script>
+    const u = 'sanitycheck', d = 'garrigai.com';
+    document.querySelectorAll('a.notify').forEach(a => {
+      a.href = `mailto:${u}@${d}?subject=Sanity%20Check%20%E2%80%94%20notify%20me`;
+    });
+  </script>
+</footer>
 </body>
 </html>
